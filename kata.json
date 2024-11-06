@@ -1,0 +1,42 @@
+[
+  {
+    "id": "angular-unit-tests-class-and-service",
+    "theme": "purple",
+    "icon": "fab fa-angular",
+    "title": "Testing Classes and Services",
+    "description": "Angular - écrire des tests unitaires de Classes et Services",
+    "url": "https://github.com/e2e-test-quest/weather-app?tab=readme-ov-file#a---tests-unitaires-objets--services"
+  },
+  {
+    "id": "angular-unit-tests-component",
+    "theme": "purple",
+    "icon": "fab fa-angular",
+    "title": "Testing Components",
+    "description": "Angular - écrire des tests unitaires de composants (DOM & Observables)",
+    "url": "https://github.com/e2e-test-quest/weather-app?tab=readme-ov-file#b---tests-unitaires-components-dom--observables"
+  },
+  {
+    "id": "angular-e2e-tests",
+    "theme": "yellow",
+    "icon": "fa-solid fa-list-check",
+    "title": "E2E tests",
+    "description": "Ecrire des tests fonctionnels pour une application web",
+    "url": "https://github.com/e2e-test-quest/kata-e2e-uuv/"
+  },
+  {
+    "id": "angular-ngxs-store",
+    "theme": "purple",
+    "icon": "fab fa-angular",
+    "title": "NGXS Store",
+    "description": "Comment utiliser NGXS Store",
+    "url": "https://github.com/e2e-test-quest/weather-app?tab=readme-ov-file#d---tests-store--ngxs-store"
+  },
+  {
+    "id": "java-solid",
+    "theme": "green",
+    "icon": "fab fa-java",
+    "title": "Java SOLID",
+    "description": "Work on SOLID design principles",
+    "url": "https://github.com/coder-may-cry/solid-kata-java"
+  }
+]

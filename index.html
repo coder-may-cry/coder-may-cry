@@ -1,0 +1,161 @@
+<main class="container">
+    <h1>Coder May Cry</h1>
+    <h2>Renforcez vos Fondamentaux en Développement par la pratique</h2>
+    <p>Bienvenue sur Coder May Cry, un espace d'apprentissage conçu pour renforcer les bases du développement logiciel à travers une série de katas progressifs et captivants. Nos défis vous guideront pas à pas dans les principes fondamentaux, de l'algorithmique aux bonnes pratiques de codage, pour construire des compétences solides et durables. Que vous soyez débutant ou en quête de perfectionnement, chaque kata est une opportunité de pratiquer, d’apprendre et de maîtriser les bases essentielles du code. Plongez dans cet espace et améliorez vos fondamentaux pour coder avec confiance et efficacité !</p>
+    <div id="app"></div>
+</main>
+
+<script type="module">
+    import { createApp, ref } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+    import KataCard from './kata-card.js'
+    import katas from './kata.json' with { type: "json" }
+    console.log(katas)
+
+   const app = createApp({
+        setup() {
+            const message = ref('Hello Vue!')
+            return {
+                message,
+                katas
+            }
+        },
+        template: `
+            <KataCard v-for="kata in katas"
+                    :icon=kata.icon
+                    :theme=kata.theme
+                    :title=kata.title
+                    :description=kata.description
+                    :url=kata.url
+                  />
+        `
+    })
+    app.component('KataCard', KataCard)
+    app.mount('#app')
+</script>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+    @import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap-grid.min.css');
+    @import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap-utilities.min.css');
+
+    :root{
+        --color-text: #616161;
+        --color-text-btn: #ffffff;
+        --card1-gradient-color1: #f12711;
+        --card1-gradient-color2: #f5af19;
+        --card2-gradient-color1: #7F00FF;
+        --card2-gradient-color2: #E100FF;
+        --card3-gradient-color1: #3f2b96;
+        --card3-gradient-color2: #a8c0ff;
+        --card4-gradient-color1: #11998e;
+        --card4-gradient-color2: #38ef7d;
+    }
+
+    body{
+        font-family: 'Roboto', sans-serif;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    #app {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .card-wrap{
+        width: 300px;
+        background: #fff;
+        border-radius: 20px;
+        border: 5px solid #fff;
+        overflow: hidden;
+        color: var(--color-text);
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+        rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        transition: all .2s ease-in-out;
+    }
+
+    .card-wrap:hover{
+        transform: scale(1.1);
+    }
+
+    .card-header{
+        height: 200px;
+        width: 100%;
+        border-radius:100% 0% 100% 0% / 0% 50% 50% 100%;
+        display: grid;
+        place-items: center;
+    }
+
+    .card-header i{
+        color: #fff;
+        font-size: 72px;
+    }
+
+    .card-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .card-title{
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 16px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+
+    }
+
+    .card-text{
+        text-align: center;
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    .card-btn{
+        border: none;
+        border-radius: 100px;
+        padding: 5px 30px;
+        color: #fff;
+        margin-bottom: 15px;
+        cursor: pointer;
+    }
+
+    .card-theme-yellow .card-header {
+        background: linear-gradient(to bottom left, var(--card1-gradient-color1), var(--card1-gradient-color2));
+    }
+
+    .card-theme-yellow .card-btn {
+        background: linear-gradient(to left, var(--card1-gradient-color1), var(--card1-gradient-color2));
+    }
+
+    .card-theme-purple .card-header {
+        background: linear-gradient(to bottom left, var(--card2-gradient-color1), var(--card2-gradient-color2));
+    }
+
+    .card-theme-purple .card-btn {
+        background: linear-gradient(to left, var(--card2-gradient-color1), var(--card2-gradient-color2));
+    }
+
+    .card-theme-light-blue .card-header {
+        background: linear-gradient(to bottom left, var(--card3-gradient-color1), var(--card3-gradient-color2));
+    }
+
+    .card-theme-light-blue .card-btn {
+        background: linear-gradient(to left, var(--card3-gradient-color1), var(--card3-gradient-color2));
+    }
+
+    .card-theme-green .card-header {
+        background: linear-gradient(to bottom left, var(--card4-gradient-color1), var(--card4-gradient-color2));
+    }
+
+    .card-theme-green .card-btn {
+        background: linear-gradient(to left, var(--card4-gradient-color1), var(--card4-gradient-color2));
+    }
+</style>
